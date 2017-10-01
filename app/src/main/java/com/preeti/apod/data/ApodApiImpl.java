@@ -17,7 +17,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApodApiImpl implements MainInterface.MainModel {
 
-
     private static final String TAG = "ApodApiImpl";
 
     @Override

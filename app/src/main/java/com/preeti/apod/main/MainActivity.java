@@ -1,7 +1,7 @@
 package com.preeti.apod.main;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -29,10 +29,11 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+
+      
     }
 
     private void init() {
-
         ButterKnife.bind(this);
         mainPresenter = new MainPresenterImpl(this);
     }
