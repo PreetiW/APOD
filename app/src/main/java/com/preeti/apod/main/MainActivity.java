@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.VideoView;
 
 import com.preeti.apod.R;
 import com.preeti.apod.data.ApodImage;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
 
     @BindView(R.id.apod_imageView)
     ImageView apodImageView;
+
+    @BindView(R.id.videoView)
+    VideoView videoView;
 
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
@@ -59,4 +63,13 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
         apodImageView.setVisibility(View.VISIBLE);
         Picasso.with(this).load(apodImage.getUrl()).into(apodImageView);
     }
+
+    @Override
+    public void showAPODVideo(ApodImage apodImage) {
+        videoView.setVisibility(View.VISIBLE);
+        videoView.setVideoPath(apodImage.getUrl());
+        videoView.start();
+    }
+
+
 }

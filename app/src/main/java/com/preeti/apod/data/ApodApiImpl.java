@@ -38,8 +38,7 @@ public class ApodApiImpl implements MainInterface.MainModel {
             @Override
             public void onResponse(Call<ApodImage> call, Response<ApodImage> response) {
                 ApodImage apodImage = response.body();
-                Log.d(TAG, apodImage.getHdurl());
-                presenter.receivedAPODImage(apodImage);
+                presenter.receivedApodData(apodImage);
             }
 
             @Override

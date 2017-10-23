@@ -12,6 +12,7 @@ public class MainPresenterImpl implements MainInterface.MainPresenter {
 
     private MainInterface.MainView mainView;
     private MainInterface.MainModel mainModel;
+    private static final String VIDEO_TYPE = "video";
 
     public MainPresenterImpl(MainInterface.MainView mainView){
         this.mainView = mainView;
@@ -25,8 +26,12 @@ public class MainPresenterImpl implements MainInterface.MainPresenter {
     }
 
     @Override
-    public void receivedAPODImage(ApodImage apodImage) {
+    public void receivedApodData(ApodImage apodImage) {
         mainView.hideProgress();
-        mainView.showAPODImage(apodImage);
+        if(apodImage.getMedia_type().equals(VIDEO_TYPE)){
+            mainView.showAPODVideo(apodImage);
+        } else {
+            mainView.showAPODImage(apodImage);
+        }
     }
 }

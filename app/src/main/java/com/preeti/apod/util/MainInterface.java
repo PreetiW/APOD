@@ -15,13 +15,15 @@ public interface MainInterface {
         void hideProgress();
 
         void showAPODImage(ApodImage apodImage);
+
+        void showAPODVideo(ApodImage apodImage);
     }
 
     public interface MainPresenter {
 
         void loadData();
 
-        void receivedAPODImage(ApodImage apodImage);
+        void receivedApodData(ApodImage apodImage);
     }
 
     public interface MainModel {
